@@ -1,0 +1,79 @@
+<div class="item-card">
+  <div class="item-card-header">
+    <div>
+        <div [ngStyle]="{'font-size.px': 16,'color': 'blue'}">{{repository.name}}</div>
+        <div class="d-flex align-items-center">
+          <span>
+            {{item.system}}
+          </span>
+          <span class="dot-seperator">
+    
+          </span>
+          <span [ngStyle]="{'text-transform':'capitalize'}">
+            {{item.type}}
+          </span>
+        </div>
+    </div>
+    <span>
+
+    </span>
+    <div class="more-icon">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  <div class="item-card-body">
+    <div class="item-card-description">
+      {{repository.description}}
+    </div>
+    <div class="container">
+        <div class="row h-100">
+            <div class="col stats-item">
+              <span>Forks Count</span>
+              <span class="d-flex align-items-center justify-content-center">{{repository.forks_count}}</span>
+            </div>
+            <div class="col stats-item">
+              <span>Stars Count</span>
+              <span class="d-flex align-items-center justify-content-center">{{repository.stargazers_count}}</span>
+            </div>
+          </div>
+    </div>
+  </div>
+  <div class="item-card-footer">
+
+  </div>
+</div>
+
+
+<!-- <div class="card-item">
+  <div class="card-header">
+    <div style="font-weight: bold">
+      facebook/react
+    </div>
+    <div>
+
+    </div>
+    <div>
+        <div>
+          116k
+        </div>
+        <div>
+          Forks
+        </div>
+      </div>
+      <div>
+        <div>
+          200k
+        </div>
+        <div>
+          Stars
+        </div>
+      </div>
+  </div>
+  <div class="card-body">
+    <div class="import-button">
+      Import
+    </div>
+  </div>
+</div> -->

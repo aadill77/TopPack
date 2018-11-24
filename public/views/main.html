@@ -1,0 +1,34 @@
+<div ng-controller="ToppackController">
+  <!-- Search container -->
+  <div class="search-container">
+      <div class="row">
+          <div class="col-md-4 col-md-offset-3">
+              <div class="search-form">
+                  <!-- <div class="form-group has-feedback"> -->
+                  <!-- <label for="search" class="sr-only">Search</label> -->
+                  <!-- <input type="text" class="form-control" name="search" id="search" placeholder="search" ng-model="searchTerm" ng-blur="searchRepo();"> -->
+                    <!-- <i class="fa fa-search" aria-hidden="true"></i> -->
+                  <!-- </div> -->
+
+                  <div class="topnav">
+                    <input type="text" placeholder="Search.." name="search" id="search" placeholder="search" ng-model="searchTerm" ng-blur="searchRepo(searchTerm);"  ng-keyup="$event.keyCode == 13 ? searchRepo(searchTerm) : null" >
+                  </div>
+
+
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <div ng-if="!searchError.length" ng-repeat="repository in repositories" ng-class="mt-10">
+    {{repository.name}}
+    <button class="btn btn-small" ng-click="importRepository(repository, $index);" ng-disabled={{repository.importError}}>
+      {{repository.imported == true ? "Imported" : repository.importError == true ? "Errored" : "Import" }}
+    </button>
+  </div>
+
+  <div ng-if="searchError.length" >
+    {{searchError}}
+  </div>
+
+</div>
